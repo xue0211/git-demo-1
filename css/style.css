@@ -20,6 +20,20 @@ hr {
     border-top: 1px solid #DEDEDE;
 }
 
+ol,
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
 .clearfix::after {
     content: '';
     display: block;
@@ -106,7 +120,7 @@ hr {
     margin-left: auto;
     margin-right: auto;
     background-color: #FFFFFF;
-    box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
 }
 
 .userCard .welcome {
@@ -169,35 +183,39 @@ hr {
     padding: 50px 50px;
 }
 
-.userCard >footer.media {
+.userCard>footer.media {
     background: #E6686A;
     text-align: center;
 }
-.userCard>footer.media>a{
+
+.userCard>footer.media>a {
     display: inline-block;
     border-radius: 50%;
-    width:40px;
+    width: 40px;
     padding: 5px 0;
     line-height: 30px;
     margin: 16px;
 }
-.userCard>footer.media>a:hover{
+
+.userCard>footer.media>a:hover {
     background: #CF5D5F;
 }
-.userCard svg{
-    width:30px;
+
+.userCard svg {
+    width: 30px;
     height: 30px;
     fill: white;
     vertical-align: top;
 }
-body > main{
+
+body>main{
     margin-top: -340px;
-    margin: 0 auto;
 }
-body>main .downloadResume{
+
+body>main .downloadResume {
     line-height: 16px;
     padding: 21px 55px;
-    border:1px solid #CDCFD1;
+    border: 1px solid #CDCFD1;
     display: inline-block;
     background: #EFEFEF;
     border-radius: 2px;
@@ -206,19 +224,140 @@ body>main .downloadResume{
     margin: 32px 0;
 
 }
-body>main .downloadResume:hover{
-    box-shadow: 0px 4px 13px 0px rgba(0,0,0,0.2);
+
+body>main .downloadResume:hover {
+    box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.2s;
 }
-body>main .downloadResumeWrapper{
+
+body>main .downloadResumeWrapper {
     text-align: center;
 }
-body>main .selfIntroduction{
+
+body>main .selfIntroduction {
     text-align: center;
     max-width: 940px;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.8;
-    font-family:kai;
+    font-family: kai;
     font-size: 18px;
+}
+
+section.sklls,
+section.portfolio {
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+}
+
+section.sklls>h2,
+section.portfolio>h2 {
+    text-align: center;
+    color: #3d4451;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+section.sklls h3 {
+    font-size: 14px;
+    line-height: 1.1;
+    padding-right: 40px;
+}
+
+section.sklls>ol {
+    background: white;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
+    padding: 42px 50px 10px;
+    margin-top: 30px;
+}
+
+section.sklls>ol>li {
+    float: left;
+    width: 48%;
+    box-sizing: border-box;
+}
+
+section.sklls>ol>li:nth-child(even) {
+    float: right;
+}
+
+section.sklls .progressBar {
+    height: 5px;
+    background: #FAE1E1;
+    border-radius: 2px;
+    margin: 4px 0 44px;
+}
+
+section.sklls .progress {
+    height: 100%;
+    background: #E6686A;
+    width: 70%;
+    border-radius: 2px;
+}
+
+section.portfolio {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+section.portfolio>nav {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 32px;
+}
+
+section.portfolio>nav>ol {
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: top;
+}
+
+section.portfolio>nav>ol>li {
+    float: left;
+    margin-left: 40px;
+    cursor: pointer;
+}
+
+section.portfolio>nav>ol>li:nth-child(1) {
+    margin-left: 0;
+}
+
+section.portfolio>nav .bar {
+    height: 5px;
+    background: white;
+    margin-top: 10px;
+    margin-bottom: 28px;
+    border-radius: 2px;
+}
+
+section.portfolio>nav .bar-inner {
+    height: 100%;
+    background: #E6686A;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+section.portfolio>nav .bar.state-1 .bar-inner {
+    margin-left: 0;
+    width: 40px;
+}
+
+section.portfolio>nav .bar.state-2 .bar-inner {
+    margin-left: 70px;
+    width: 42px;
+}
+
+section.portfolio>nav .bar.state-3 .bar-inner {
+    margin-left: 140px;
+    width: 100px;
+}
+section.portfolio .works{
+    position: relative;
+}
+section.portfolio .works .big,
+section.portfolio .works .small{
+    position: absolute;
 }
