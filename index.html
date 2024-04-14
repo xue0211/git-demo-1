@@ -17,6 +17,7 @@
         }
 
         .site-welcome {
+            /*loading*/
             display: none;
             position: fixed;
             top: 0;
@@ -30,6 +31,7 @@
         }
 
         .site-welcome.active {
+            /*loading*/
             display: flex;
         }
     </style>
@@ -39,7 +41,7 @@
     <div id="siteWelcome" class="site-welcome active">
         <div class="loading"></div>
     </div>
-    <div class="TopNavBar ">
+    <div id="TopNavBar" class="TopNavBar">
         <div class="TopNavBar-inner clearfix">
             <a class="logo" href="#" alt="logo">
                 <span class="rs">RS</span><span class="card">card</span>
@@ -211,7 +213,15 @@
     <script>
         setTimeout(function () {
             siteWelcome.classList.remove('active')
-        }, 1000)
+        }, 1000)       //让loading持续1秒再消失
+
+        window.onscroll = function (x) {
+            if (window.scrollY > 0) {
+                TopNavBar.classList.add('sticky')
+            }else{
+                TopNavBar.classList.remove('sticky')
+            }
+        }
     </script>
 </body>
 

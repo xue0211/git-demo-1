@@ -17,19 +17,24 @@ h6 { font-weight: normal;}
 
 .clearfix::after { content: '';display: block;clear: both;}
 
-.TopNavBar { padding: 20px 0; position: fixed;top: 0;left: 0;width: 100%;}
+.TopNavBar { padding: 20px 0; position: fixed;top: 0;left: 0;width: 100%;
+    transition: all 0.5s;  color: #b7b7b7;
+}
+.TopNavBar.sticky{background: white; padding: 10px 0; z-index: 1;
+    box-shadow: 0 0 10px rgba(0,0,0,0.25); color: #3d4451;   /*鼠标滚动，导航条改变*/
+}
 
 .TopNavBar .logo {float: left;}
 
 .TopNavBar-inner { padding: 0 16px;}
 
-.TopNavBar nav {float: right;padding-top: 4px;}
+.TopNavBar nav {float: right;padding-top: 3px;}
 
 .TopNavBar nav>ul { list-style: none; margin: 0; padding: 0;}
 
 .TopNavBar nav>ul>li {float: left;margin-left: 17px;margin-right: 17px;}
 
-.TopNavBar nav>ul>li>a {font-size: 12px; color: #b7b7b7;text-decoration: none;font-weight: bold;border-top: 3px solid transparent;
+.TopNavBar nav>ul>li>a {font-size: 12px;color: inherit;text-decoration: none;font-weight: bold;border-top: 3px solid transparent;
     border-bottom: 3px solid transparent;padding: 5px 0;display: block;}
 
 .TopNavBar nav>ul>li>a:hover {border-bottom: 3px solid #E06567;}
