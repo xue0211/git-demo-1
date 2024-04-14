@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/loading.css">
     <script src="//at.alicdn.com/t/c/font_4448759_q9g7opulq2.js"></script>
     <style type="text/css">
         .icon {
@@ -14,10 +15,25 @@
             fill: currentColor;
             overflow: hidden;
         }
+        .site-welcome{
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #888;
+            z-index: 1;
+            justify-content: center;
+            align-items: center;
+        }
+        .site-welcome.active{
+            display: flex;
+        }
     </style>
 </head>
 
 <body>
+    <div id = "siteWelcome" class="site-welcome active">
+        <div class="loading"></div>
+    </div>
     <div class="TopNavBar ">
         <div class="TopNavBar-inner clearfix">
             <a class="logo" href="#" alt="logo">
@@ -187,6 +203,9 @@
         <button type="button">hi</button>
         <input type="submit" value="button">
     </form>
+    <script>
+        siteWelcome.classList.remove('active')
+    </script>
 </body>
 
 </html>
