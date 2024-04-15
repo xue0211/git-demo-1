@@ -46,25 +46,25 @@
             <a class="logo" href="#" alt="logo">
                 <span class="rs">RS</span><span class="card">card</span>
             </a>
-            <nav>
+            <nav class="menu">
                 <ul class="clearfix">
-                    <li><a href="">关于</a></li>
-                    <li><a href="">技能</a></li>
+                    <li><a href="#siteAbout">关于</a></li>
+                    <li><a href="#siteSkills">技能</a></li>
                     <li>
-                        <a class= "menuTrigger" href="">作品</a>
-                         <ul class="submenu">
+                        <a href="#siteWorks">作品</a>
+                        <ul class="submenu">
                             <li>作品1</li>
                             <li>作品2</li>
                             <li>作品3</li>
-                         </ul>
+                        </ul>
                     </li>
                     <li>
-                        <a class= "menuTrigger" href="">博客</a>
+                        <a href="">博客</a>
                         <ul class="submenu">
                             <li>博客1</li>
                             <li>博客2</li>
                             <li>博客3</li>
-                         </ul>
+                        </ul>
                     </li>
                     <li><a href="">日历</a></li>
                     <li><a href="">联系方式</a></li>
@@ -78,7 +78,7 @@
         <div class="mask"></div>
     </div>
     <main>
-        <div class="userCard">
+        <div id="siteAbout" class="userCard">
             <div class="pictureAndtext clearfix">
                 <div class="picture"><img src="./css/img/avatar.jpg" width="299" height="347" alt="头像"></div>
                 <div class="text">
@@ -130,7 +130,7 @@
             技能：前端开发、Rails 开发、Node.js 开发
         </p>
     </main>
-    <section class="sklls">
+    <section id="siteSkills" class="sklls">
         <h2>技能</h2>
         <ol class="clearfix">
             <li>
@@ -183,7 +183,7 @@
             </li>
         </ol>
     </section>
-    <section class="portfolio">
+    <section class="portfolio" id="siteWorks">
         <h2>作品集</h2>
         <nav>
             <ol class="clearfix">
@@ -232,21 +232,51 @@
         window.onscroll = function (x) {
             if (window.scrollY > 0) {
                 TopNavBar.classList.add('sticky')
-            }else{
+            } else {
                 TopNavBar.classList.remove('sticky')
             }
         }
-        let aTags = document.getElementsByClassName('menuTrigger')
-        /*console.log(aTags)*/
-        for(let i=0; i<aTags.length; i++){
-            aTags[i].onmouseenter = function(x){
+        let liTags = document.querySelectorAll('nav.menu > ul > li')//下拉菜单
+        /*console.log(liTags)*/
+        for (let i = 0; i < liTags.length; i++) {
+            liTags[i].onmouseenter = function (x) {
                 /*console.log('onmouseenter')*/
                 /*console.log(x.target)   //用户操作的元素*/
                 /*console.log(x.currentTarget)  //我们监听的元素  */
-                let a = x.currentTarget
+                x.currentTarget.classList.add('active')
+                /*console.log(a.nextSibling.nextSibling)*/
+                //let brother = li.getElementsByTagName('ul')[0]        //怎么找li的节点弟弟
+                /*while (brother.tagName !== 'UL') {
+                    brother = brother.nextSibling
+                }*/
+                /*console.log(brother)*/
+                //brother.classList.add('active')
             }
-            aTags[i].onmouseleave = function(){
-                console.log('onmouseleave')
+            liTags[i].onmouseleave = function (x) {
+                /*console.log('onmouseleave')*/
+                x.currentTarget.classList.remove('active')
+                /*console.log(a.nextSibling.nextSibling)*/
+                //let brother = li.getElementsByTagName('ul')[0] 
+                /*console.log(brother)*/
+                //brother.classList.remove('active')
+            }
+        }
+        let aTags = document.querySelectorAll('nav.menu > ul > li > a')
+        /*console.log(aTags)*/
+        for (let i = 0; i < aTags.length; i++) {
+            aTags[i].onclick = function (x) {
+                x.preventDefault()
+                //console.log('you clicked')
+                //console.log(x.currentTarget)
+                let a = x.currentTarget
+                //console.log(a.getAttribute('href'))
+                //console.log(a.href)
+                let href = a.getAttribute('href') //'#siteAbout'
+                let element = document.querySelector(href)
+                let rect = element.getBoundingClientRect()
+                // console.log(element)
+                //console.log(element.offsetTop)  //这个元素距离这个页面最顶端的距离，不是窗口顶端的距离
+                top = element.offsetTop
             }
         }
     </script>
