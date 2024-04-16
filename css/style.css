@@ -17,6 +17,10 @@ h6 { font-weight: normal;}
 
 .clearfix::after { content: '';display: block;clear: both;}
 
+[data-x].active{
+    outline:10px solid red;
+}
+
 .TopNavBar { padding: 20px 0; position: fixed;top: 0;left: 0;width: 100%;
     transition: all 0.5s;  color: #b7b7b7;
 }
