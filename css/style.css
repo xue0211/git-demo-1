@@ -20,7 +20,21 @@ h6 { font-weight: normal;}
 [data-x].active{
     outline:10px solid red;
 }
-
+[data-x].offset{
+    transform: translateY(100px);
+}
+[data-x]{
+    transform: translateY(0);
+    transition: all 0.5s;
+}
+@keyframes slideUp{
+    0%{
+        transform: translateY(-340px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
 .TopNavBar { padding: 20px 0; position: fixed;top: 0;left: 0;width: 100%;
     transition: all 0.5s;  color: #b7b7b7;
 }
@@ -36,7 +50,8 @@ h6 { font-weight: normal;}
 .TopNavBar nav>ul>li {float: left;margin-left: 17px;margin-right: 17px; position: relative;}
 .TopNavBar nav>ul>li>a {font-size: 12px;color: inherit;text-decoration: none;font-weight: bold;border-top: 3px solid transparent;
     border-bottom: 3px solid transparent;padding: 5px 0;display: block; position: relative;}
-.TopNavBar nav>ul>li.active>a::after {
+.TopNavBar nav>ul>li.active>a::after,
+.TopNavBar nav>ul>li.highlight>a::after {
     content: '';
     display: block;
     position: absolute;
@@ -67,9 +82,9 @@ h6 { font-weight: normal;}
 }
 @keyframes submenuSlide{
     0%{
-        margin-right: 100%;
+        margin-right: 100%;     
     }
-    100&{
+    100%{
         margin-right: 0%;
     }
 }
@@ -119,28 +134,33 @@ body>main .downloadResumeWrapper { text-align: center;}
 body>main .selfIntroduction {text-align: center;max-width: 940px;margin-left: auto;margin-right: auto;line-height: 1.8;
     font-family: 楷体;font-size: 20px;}
 
-section.sklls,
-section.portfolio {max-width: 940px;margin-left: auto;margin-right: auto;margin-top: 60px;}
-section.sklls>h2,
-section.portfolio>h2 {text-align: center;color: #3d4451;font-size: 34px;line-height: 1.2;font-weight: 600;}
-section.sklls h3 {font-size: 14px;line-height: 1.1;padding-right: 40px;}
-section.sklls>ol {background: white;box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);padding: 42px 50px 10px;margin-top: 30px;}
-section.sklls>ol>li {float: left; width: 48%; box-sizing: border-box;}
-section.sklls>ol>li:nth-child(even) {float: right;}
+section.skills,
+section.portfolio { max-width: 940px;margin-left: auto;margin-right: auto;margin-top: 60px;}
+section.skills>h2,
+section.portfolio>h2 { text-align: center;color: #3d4451;font-size: 34px;line-height: 1.2;font-weight: 600;}
+section.skills h3 { font-size: 14px;line-height: 1.1;padding-right: 40px;}
+section.skills>ol { background: white;box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);padding: 42px 50px 10px;margin-top: 30px;}
+section.skills>ol>li { float: left; width: 48%; box-sizing: border-box;}
+section.skills>ol>li:nth-child(even) {float: right;}
 
-section.sklls .progressBar {height: 5px;background: #FAE1E1;border-radius: 2px;margin: 4px 0 44px;}
-section.sklls .progress {height: 100%;background: #E6686A;width: 70%;border-radius: 2px;}
+section.skills .progressBar { height: 5px;background: #FAE1E1;
+    border-radius: 2px;margin: 4px 0 44px; overflow: hidden;}
+section.skills .progressBar> .progress { height: 100%;background: #E6686A;
+    width: 70%;border-radius: 2px; transform: translateX(0); transition: all 1s;}
+section.skills.offset .progress{
+    transform: translateX(-100%);
+}
 
-section.portfolio {text-align: center;margin-bottom: 100px;}
-section.portfolio>nav {display: inline-block;vertical-align: top;margin-top: 32px;}
-section.portfolio>nav>ol {margin: 0 auto;display: inline-block;vertical-align: top;}
-section.portfolio>nav>ol>li {float: left;margin-left: 40px;cursor: pointer;}
-section.portfolio>nav>ol>li:nth-child(1) {margin-left: 0;}
-section.portfolio>nav .bar {height: 5px;background: white;margin-top: 10px;margin-bottom: 28px;border-radius: 2px;}
-section.portfolio>nav .bar-inner {height: 100%;background: #E6686A;border-radius: 2px;transition: all 0.3s;}
-section.portfolio>nav .bar.state-1 .bar-inner {margin-left: 0;width: 40px;}
-section.portfolio>nav .bar.state-2 .bar-inner {margin-left: 70px;width: 42px;}
-section.portfolio>nav .bar.state-3 .bar-inner {margin-left: 140px;width: 100px;}
-section.portfolio .works{position: relative;}
+section.portfolio { text-align: center;margin-bottom: 100px;}
+section.portfolio>nav { display: inline-block;vertical-align: top;margin-top: 32px;}
+section.portfolio>nav>ol { margin: 0 auto;display: inline-block;vertical-align: top;}
+section.portfolio>nav>ol>li { float: left;margin-left: 40px;cursor: pointer;}
+section.portfolio>nav>ol>li:nth-child(1) { margin-left: 0;}
+section.portfolio>nav .bar { height: 5px;background: white;margin-top: 10px;margin-bottom: 28px;border-radius: 2px;}
+section.portfolio>nav .bar-inner { height: 100%;background: #E6686A;border-radius: 2px;transition: all 0.3s;}
+section.portfolio>nav .bar.state-1 .bar-inner { margin-left: 0;width: 40px;}
+section.portfolio>nav .bar.state-2 .bar-inner { margin-left: 70px;width: 42px;}
+section.portfolio>nav .bar.state-3 .bar-inner { margin-left: 140px;width: 100px;}
+section.portfolio .works{ position: relative;}
 section.portfolio .works .big,
-section.portfolio .works .small{position: absolute;}
+section.portfolio .works .small{ position: absolute;}
