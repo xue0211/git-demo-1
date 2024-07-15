@@ -4,8 +4,9 @@
     <meta charset="zh-hans">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume</title>
-    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/loading.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/style.css">
     <script src="//at.alicdn.com/t/c/font_4448759_q9g7opulq2.js"></script>
     <style type="text/css">
         .icon {
@@ -78,9 +79,12 @@
         <div class="mask"></div>
     </div>
     <main>
+        <!-- If we need scrollbar 
+            <div class="swiper-scrollbar"></div>-->
+        </div>
         <div data-x id="siteAbout" class="userCard">
             <div class="pictureAndtext clearfix">
-                <div class="picture"><img src="./css/img/avatar.jpg" width="299" height="347" alt="头像"></div>
+                <div class="picture"><img src="/img/avatar.jpg" width="299" height="347" alt="头像"></div>
                 <div class="text">
                     <div class="profile">
                         <span class="welcome">Hello
@@ -185,46 +189,51 @@
     </section>
     <section data-x class="portfolio" id="siteWorks">
         <h2>作品集</h2>
-        <nav>
-            <ol class="clearfix">
-                <li id="portfolio1">所有</li>
-                <li id="portfolio2">框架</li>
-                <li id="portfolio3">原生JS&amp;CSS</li>
-            </ol>
-            <div id="portfolioBar" class="bar state-1">
-                <div class="bar-inner"></div>
+        <!-- Slider main container -->
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <img src="./img/nav-page.jpg" class="swiper-slide">
+                <img src="./img/canvas.jpg" class="swiper-slide">
+                <img src="./img/apple-style-slides.jpg" class="swiper-slide">
             </div>
-            <script>
-                portfolio1.onclick = function () {
-                    portfolioBar.className = 'bar state-1'
-                }
-                portfolio2.onclick = function () {
-                    portfolioBar.className = 'bar state-2'
-                }
-                portfolio3.onclick = function () {
-                    portfolioBar.className = 'bar state-3'
-                }
-            </script>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
 
-
-        </nav>
-        <div class="works" style="height: 597px;">
-            <div class="big" style="top:0 ; left: 0;">
-                <img src="./css/img/1.jpg" alt="作品1">
-            </div>
-            <div class="small" style="top:0 ; left: 647px;">
-                <img src="./css/img/2.jpg" alt="作品2">
-            </div>
-            <div class="small" style="top:312px ; left: 647px;">
-                <img src="./css/img/3.jpg" alt="作品3">
-            </div>
+            <!-- If we need navigation buttons -->
         </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
     </section>
     <form action="3">
         <button type="button">hi</button>
         <input type="submit" value="button">
     </form>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/20.0.0/tween.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            loop: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            /*scrollbar: {
+                el: '.swiper-scrollbar',
+            },*/
+        });
+    </script>
     <script>
 
         //添加 offset 类
@@ -270,7 +279,7 @@
              }*/
             //specialTags[minIndex].classList.add('active')
             let id = specialTags[minIndex].id
-            console.log(id)
+            //console.log(id)
             let a = document.querySelector('a[href="#' + id + '"]')
             // id == 'siteAbout'   'a[href="#siteAbout"]'
             let li = a.parentNode
