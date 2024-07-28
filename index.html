@@ -161,190 +161,35 @@
     </section>
     <section data-x class="portfolio" id="siteWorks">
         <h2>作品集</h2>
+        <!--这是 init-swiper 的 view，用户看得见的东西-->
         <!-- Slider main container -->
-        <div class="swiper">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <img src="./img/nav-page.jpg" class="swiper-slide">
-                <img src="./img/canvas.jpg" class="swiper-slide">
-                <img src="./img/apple-style-slides.jpg" class="swiper-slide">
-            </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
+        <div id="mySlides">
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <img src="./img/nav-page.jpg" class="swiper-slide">
+                    <img src="./img/canvas.jpg" class="swiper-slide">
+                    <img src="./img/apple-style-slides.jpg" class="swiper-slide">
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
 
-            <!-- If we need navigation buttons -->
+                <!-- If we need navigation buttons -->
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
     </section>
-    <form action="3">
-        <button type="button">hi</button>
-        <input type="submit" value="button">
-    </form>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/20.0.0/tween.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        const swiper = new Swiper('.swiper', {
-            // Optional parameters
-            loop: true,
-
-            // If we need pagination
-            pagination: {
-                el: '.swiper-pagination',
-            },
-
-            // Navigation arrows
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-
-            // And if we need scrollbar
-            /*scrollbar: {
-                el: '.swiper-scrollbar',
-            },*/
-        });
-    </script>
-    <script>
-
-        //添加 offset 类
-        let specialTags = document.querySelectorAll('[data-x]')
-        for (let i = 0; i < specialTags.length; i++) {
-            specialTags[i].classList.add('offset')
-        }
-
-        /*setTimeout(function () {
-            siteWelcome.classList.remove('active')
-        }, 100) */      //让loading持续1秒再消失
-
-        findClosest()
-
-
-        window.onscroll = function (x) {
-            if (window.scrollY > 0) {
-                TopNavBar.classList.add('sticky')
-            } else {
-                TopNavBar.classList.remove('sticky')
-            }
-
-            //console.log('window.scrollY')
-            //console.log(window.scrollY)
-            findClosest()
-        }
-
-        function findClosest() {
-            let specialTags = document.querySelectorAll('[data-x]')
-            let minIndex = 0
-            for (let i = 1; i < specialTags.length; i++) {
-                //console.log('specialTags[i].offsetTop')
-                //console.log(specialTags[i].offsetTop)
-                if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
-                    minIndex = i
-                }
-            }
-            //minIndex 就是离窗口顶部最近的元素
-            specialTags[minIndex].classList.remove('offset')
-            //console.log(minIndex)
-            /* for(let i=0; i<specialTags.length; i++){
-                 specialTags[i].classList.remove('active')
-             }*/
-            //specialTags[minIndex].classList.add('active')
-            let id = specialTags[minIndex].id
-            //console.log(id)
-            let a = document.querySelector('a[href="#' + id + '"]')
-            // id == 'siteAbout'   'a[href="#siteAbout"]'
-            let li = a.parentNode
-            let brotherAndMe = li.parentNode.children
-            for (let i = 0; i < brotherAndMe.length; i++) {
-                brotherAndMe[i].classList.remove('highlight')
-            }
-            li.classList.add('highlight')
-            //console.log(li)
-        }
-
-
-        let liTags = document.querySelectorAll('nav.menu > ul > li')//下拉菜单
-        /*console.log(liTags)*/
-        for (let i = 0; i < liTags.length; i++) {
-            liTags[i].onmouseenter = function (x) {
-                /*console.log('onmouseenter')*/
-                /*console.log(x.target)   //用户操作的元素*/
-                /*console.log(x.currentTarget)  //我们监听的元素  */
-                x.currentTarget.classList.add('active')
-                /*console.log(a.nextSibling.nextSibling)*/
-                //let brother = li.getElementsByTagName('ul')[0]        //怎么找li的节点弟弟
-                /*while (brother.tagName !== 'UL') {
-                    brother = brother.nextSibling
-                }*/
-                /*console.log(brother)*/
-                //brother.classList.add('active')
-            }
-            liTags[i].onmouseleave = function (x) {
-                /*console.log('onmouseleave')*/
-                x.currentTarget.classList.remove('active')
-                /*console.log(a.nextSibling.nextSibling)*/
-                //let brother = li.getElementsByTagName('ul')[0] 
-                /*console.log(brother)*/
-                //brother.classList.remove('active')
-            }
-        }
-        let aTags = document.querySelectorAll('nav.menu > ul > li > a')
-        /*console.log(aTags)*/
-        function animate(time) {     //告诉tween间隔多少毫秒动一次
-            requestAnimationFrame(animate)
-            TWEEN.update(time)
-        }
-        requestAnimationFrame(animate)   //请求动画帧率
-        const box = document.getElementById('box') // Get the element we want to animate.
-        for (let i = 0; i < aTags.length; i++) {
-            aTags[i].onclick = function (x) {
-                x.preventDefault()  //阻止默认动作
-                //console.log('you clicked')
-                //console.log(x.currentTarget)
-                let a = x.currentTarget   //获取到用户点的a标签
-                //console.log(a.getAttribute('href'))
-                //console.log(a.href)
-                let href = a.getAttribute('href') //'#siteAbout'  获取到a标签上写的href
-                let element = document.querySelector(href)
-                //let rect = element.getBoundingClientRect()
-                // console.log(element)
-                //console.log(element.offsetTop)  //这个元素距离这个页面最顶端的距离，不是窗口顶端的距离
-                let top = element.offsetTop
-                // let top = document.querySelector(x.currentTarget.getAttribute('href')).offsetTop
-
-                //let n = 25 //动画移动的次数
-                //let duration = 500 / n  //频率
-                let currentTop = window.scrollY  //当前高度
-                let targetTop = top - 80   //目标高度
-                let s = targetTop - currentTop //每次动画移动的距离
-                // let i = 0     //计数
-                //console.log(distance)
-                //window.scrollTo(0, top - 80)   //window滑动到x方向不变，y方向把元素定位到距离窗口80像素的位置
-                //let id = setInterval(() => {
-                /* if (i === n) {
-                     window.clearInterval(id)
-                     return
-                 }
-                 i = i + 1
-                 window.scrollTo(0, currentTop + distance * i)
-             }, duration)*/
-                var coords = { y: currentTop }; // Start at (0, 0)  起始位置
-                var t = Math.abs((s / 100) * 300) //求绝对值   时间
-                if (t > 500) { t = 500 }
-
-                var tween = new TWEEN.Tween(coords) // Create a new tween that modifies 'coords'.  起始位置
-                    .to({ y: targetTop }, t) // Move to (300, 200) in 1 second.  结束位置和时间
-                    .easing(TWEEN.Easing.Quadratic.Inout) // Use an easing function to make the animation smooth.  缓冲类型
-                    .onUpdate(function () {   //coords.y已经变了
-                        // Called after tween.js updates 'coords'.
-                        // Move 'box' to the position described by 'coords' with a CSS translation.
-                        window.scrollTo(0, coords.y)   //如何更新界面
-                    })
-                    .start(); // Start the tween immediately.
-            }
-        }
-    </script>
+    <!-- 模块化 -->
+    <script src="./js/init-swiper.js"></script>
+    <script src="./js/auto-slide-up.js"></script>
+    <script src="./js/sticky-topbar.js"></script>
+    <script src="./js/smoothly-navigation.js"></script>
+    <script src="./js/module-1.js"></script>
+    <script src="./js/module-2.js"></script>
 </body>
 
 </html>
