@@ -1,19 +1,21 @@
 <!DOCTYPE html>
+<html lang="zh-hans">
 
-<head lang="en">
-    <meta charset="zh-hans">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Resume</title>
-    <link rel="stylesheet" href="./css/loading.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/loading.css">
     <script src="//at.alicdn.com/t/c/font_4448759_q9g7opulq2.js"></script>
 </head>
 
 <body>
-    <!--<div id="siteWelcome" class="site-welcome active">
+    <div id="siteWelcome" class="site-welcome active">
         <div class="loading"></div>
-    </div>-->
+    </div>
     <div id="TopNavBar" class="TopNavBar">
         <div class="TopNavBar-inner clearfix">
             <a class="logo" href="#" alt="logo">
@@ -55,7 +57,7 @@
             <div class="swiper-scrollbar"></div>-->
         </div>
         <div data-x id="siteAbout" class="userCard">
-            <div class="pictureAndtext clearfix">
+            <div class="pictureAndText clearfix">
                 <div class="picture"><img src="/img/avatar.jpg" width="299" height="347" alt="头像"></div>
                 <div class="text">
                     <div class="profile">
@@ -114,7 +116,7 @@
                     HTML 5 &amp; CSS 3
                 </h3>
                 <div class="progressBar">
-                    <div class="progress" style="width: 10%;"></div>
+                    <div class="progress" style="width: 90%;"></div>
                 </div>
             </li>
             <li>
@@ -122,7 +124,7 @@
                     JavaScript
                 </h3>
                 <div class="progressBar">
-                    <div class="progress" style="width: 20%;"></div>
+                    <div class="progress" style="width: 95%;"></div>
                 </div>
             </li>
             <li>
@@ -130,7 +132,7 @@
                     jQuery
                 </h3>
                 <div class="progressBar">
-                    <div class="progress" style="width: 30%;"></div>
+                    <div class="progress" style="width: 80%;"></div>
                 </div>
             </li>
             <li>
@@ -138,7 +140,7 @@
                     Vue.js
                 </h3>
                 <div class="progressBar">
-                    <div class="progress" style="width: 40%;"></div>
+                    <div class="progress" style="width: 70%;"></div>
                 </div>
             </li>
             <li>
@@ -146,7 +148,7 @@
                     React.js
                 </h3>
                 <div class="progressBar">
-                    <div class="progress" style="width: 50%;"></div>
+                    <div class="progress" style="width: 60%;"></div>
                 </div>
             </li>
             <li>
@@ -154,7 +156,7 @@
                     Node.js
                 </h3>
                 <div class="progressBar">
-                    <div class="progress" style="width: 60%;"></div>
+                    <div class="progress" style="width: 50%;"></div>
                 </div>
             </li>
         </ol>
@@ -163,7 +165,7 @@
         <h2>作品集</h2>
         <!--这是 init-swiper 的 view，用户看得见的东西-->
         <!-- Slider main container -->
-        <div id="mySlides">
+        <div id="mySlides">  <!-- 轮播相册-->
             <div class="swiper">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
@@ -174,7 +176,6 @@
                 </div>
                 <!-- If we need pagination -->
                 <div class="swiper-pagination"></div>
-
                 <!-- If we need navigation buttons -->
             </div>
             <div class="swiper-button-prev"></div>
@@ -183,13 +184,15 @@
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/20.0.0/tween.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.0/dist/av-min.js"></script>
+    <script src="./js/base/view.js"></script>
+    <script src="./js/base/controller.js"></script>
     <!-- 模块化 -->
+    <script src="./js/loading.js"></script>
     <script src="./js/init-swiper.js"></script>
     <script src="./js/auto-slide-up.js"></script>
     <script src="./js/sticky-topbar.js"></script>
     <script src="./js/smoothly-navigation.js"></script>
-    <script src="./js/module-1.js"></script>
-    <script src="./js/module-2.js"></script>
-</body>
 
+</body>
 </html>

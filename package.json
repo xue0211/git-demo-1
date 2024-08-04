@@ -1,0 +1,17 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "description": "hello",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "leancloud-realtime": "^5.0.0-rc.8",
+    "leancloud-realtime-plugin-typed-messages": "^4.0.2",
+    "leancloud-storage": "^4.15.2"
+  }
+}

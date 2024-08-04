@@ -1,25 +1,31 @@
-!function () {
+!function () {//为了避免声明全局变量，我们使用立即执行函数
     //添加 offset 类
-    let specialTags = document.querySelectorAll('[data-x]')
+    let specialTags = document.querySelectorAll('[data-x]')//获取页面关键标签，用data-x标记
     for (let i = 0; i < specialTags.length; i++) {
         specialTags[i].classList.add('offset')
     }
-    findClosestAndRemoveOffset()
+
+    //使“关于”这一栏一打开页面就跳动
+    setTimeout(function () {
+        findClosestAndRemoveOffset()
+    }, 2000)
+
+     //导航栏下拉变色动效
     window.addEventListener('scroll', function (x) {
         findClosestAndRemoveOffset()
-    })
+    }) 
 
 
     // helper
-    function findClosestAndRemoveOffset() {
-        let specialTags = document.querySelectorAll('[data-x]')
+    function findClosestAndRemoveOffset() {  //到达指定模块，导航栏相应a高亮
+        let specialTags = document.querySelectorAll('[data-x]')//获取页面关键标签，用data-x标记
         let minIndex = 0
         for (let i = 1; i < specialTags.length; i++) {
             //console.log('specialTags[i].offsetTop')
             //console.log(specialTags[i].offsetTop)
             if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
                 minIndex = i
-            }
+            }//遍历标签，看哪个离当前滚动高度最近，获取其index
         }
         //minIndex 就是离窗口顶部最近的元素
         specialTags[minIndex].classList.remove('offset')

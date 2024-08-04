@@ -21,7 +21,7 @@ h6 { font-weight: normal;}
     outline:10px solid red;
 }
 [data-x].offset{
-    transform: translateY(100px);
+    transform: translateY(80px);
 }
 [data-x]{
     transform: translateY(0);
@@ -70,7 +70,7 @@ h6 { font-weight: normal;}
 .TopNavBar .submenu{     /*导航条的副菜单*/
     display: none;
     position: absolute;
-    right: 0;
+    right: -18px;
     top: 100%;
     background: white;
     color: #3D4451;
@@ -94,11 +94,11 @@ h6 { font-weight: normal;}
     padding: 5px 10px;
 }
 .TopNavBar .logo {font-size: 24px;font-family: Arial Black;}
-.TopNavBar .logo .rs {color: #E6686A;margin-right: 12px;}
+.TopNavBar .logo .rs {color: #E6686A;margin-right: 6px;}
 .TopNavBar .logo .card { color: #9A9DA2;}
 
 .banner {height: 515px;background-image: url(/img/rs-cover.jpg);background-position: center center;background-size: cover;}
-.banner .mask {height: 515px;background-color: rgba(0, 0, 0, 0.8);}
+.banner .mask {height: 515px;background-color: rgba(0, 0, 0, 0.5);}
 
 .userCard {max-width: 940px; margin-left: auto; margin-right: auto; background-color: #FFFFFF; box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);}
 .userCard .welcome { color: white;background-color: #E6686A; padding: 5px 16px; display: inline-block; line-height: 20px;
@@ -116,7 +116,7 @@ h6 { font-weight: normal;}
 .userCard dt { width: 30%; font-weight: bold;}
 .userCard dd {width: 70%;color: #9DA0A7;}
 
-.userCard .pictureAndtext {padding: 50px 50px;}
+.userCard .pictureAndText {padding: 50px 50px;}
 
 .userCard>footer.media {background: #E6686A;text-align: center;}
 .userCard>footer.media>a {display: inline-block;border-radius: 50%;width: 40px;padding: 5px 0;line-height: 30px;
@@ -127,13 +127,13 @@ h6 { font-weight: normal;}
 
 body>main{margin-top: -340px;}
 
-body>main .downloadResume {line-height: 16px;padding: 21px 55px;border: 1px solid #CDCFD1;display: inline-block;background: #EFEFEF;
+body>main .downloadResume {font-size: 14px; line-height: 16px;padding: 21px 55px;border: 1px solid #CDCFD1;display: inline-block;background: #EFEFEF;
     border-radius: 2px;color: #3D4451;font-weight: bold;margin: 32px 0;}
 body>main .downloadResume:hover {box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.2);transition: box-shadow 0.2s;}
 body>main .downloadResumeWrapper { text-align: center;}
 
-body>main .selfIntroduction {text-align: center;max-width: 940px;margin-left: auto;margin-right: auto;line-height: 1.8;
-    font-family: 楷体;font-size: 20px;}
+body>main .selfIntroduction {text-align: center;max-width: 940px;margin-left: auto;margin-right: auto;line-height: 1.5;
+    font-family: 楷体;font-size: 18px;}
 
 section.skills,
 section.portfolio { max-width: 940px;margin-left: auto;margin-right: auto;margin-top: 60px;}
@@ -141,9 +141,10 @@ section.skills>h2,
 section.portfolio>h2 { text-align: center;color: #3d4451;font-size: 34px;line-height: 1.2;font-weight: 600;}
 section.skills h3 { font-size: 14px;line-height: 1.1;padding-right: 40px;}
 section.skills>ol { background: white;box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);padding: 42px 50px 10px;margin-top: 30px;}
-section.skills>ol>li { float: left; width: 48%; box-sizing: border-box;}
+section.skills>ol>li { float: left; width: 48%; box-sizing: border-box;}/*加入box-sizing后padding算在48%之内，为了实现两端留出的空隙一样*/
 section.skills>ol>li:nth-child(even) {float: right;}
-
+/*nth-child是伪类，与hover类似。
+    even表示偶数，当你是偶数时执行右浮，odd为奇数。为了实现两端留出的空隙一样*/
 section.skills .progressBar { height: 5px;background: #FAE1E1;
     border-radius: 2px;margin: 4px 0 44px; overflow: hidden;}
 section.skills .progressBar> .progress { height: 100%;background: #E6686A;
