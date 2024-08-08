@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Resume</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/loading.css">
+    <script src="//at.alicdn.com/t/c/font_4448759_q9g7opulq2.js"></script>
+</head>
+
+<body>
+    <div id="siteWelcome" class="site-welcome active">
+        <div class="loading"></div>
+    </div>
+    <div id="TopNavBar" class="TopNavBar">
+        <div class="TopNavBar-inner clearfix">
+            <a class="logo" href="#" alt="logo">
+                <span class="rs">RS</span><span class="card">card</span>
+            </a>
+            <nav class="menu">
+                <ul class="clearfix">
+                    <li><a href="#siteAbout">关于</a></li>
+                    <li><a href="#siteSkills">技能</a></li>
+                    <li>
+                        <a href="#siteWorks">作品</a>
+                        <ul class="submenu">
+                            <li>作品1</li>
+                            <li>作品2</li>
+                            <li>作品3</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">博客</a>
+                        <ul class="submenu">
+                            <li>博客1</li>
+                            <li>博客2</li>
+                            <li>博客3</li>
+                        </ul>
+                    </li>
+                    <li><a href="">日历</a></li>
+                    <li><a href="">联系方式</a></li>
+                    <li><a href="">其他</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+    <div class="banner">
+        <div class="mask"></div>
+    </div>
+    <main>
+        <!-- If we need scrollbar 
+            <div class="swiper-scrollbar"></div>-->
+        </div>
+        <div data-x id="siteAbout" class="userCard">
+            <div class="pictureAndText clearfix">
+                <div class="picture"><img src="/img/avatar.jpg" width="299" height="347" alt="头像"></div>
+                <div class="text">
+                    <div class="profile">
+                        <span class="welcome">Hello
+                            <span class="triangle"></span>
+                        </span>
+                        <h1>钟雪</h1>
+                        <p>前端开发工程师</p>
+                        <hr>
+                        <dl>
+                            <dt>年龄</dt>
+                            <dd>21</dd>
+                            <dt>所在城市</dt>
+                            <dd>南京</dd>
+                            <dt>邮箱</dt>
+                            <dd>2723709118@qq.com</dd>
+                            <dt>手机</dt>
+                            <dd>17714428531</dd>
+                        </dl>
+                    </div>
+
+                </div>
+            </div>
+            <footer class="media">
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-tuite"></use>
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                </a>
+            </footer>
+        </div>
+        <p class="downloadResumeWrapper">
+            <a href="./大创结题证书.pdf" class="downloadResume" target="_blank" download>下载PDF简历</a>
+        </p>
+        <p class="selfIntroduction">
+            钟雪，南京工业大学行政管理专业毕业生，第二学历为计算机科学与技术
+            <br>
+            技能：前端开发、Rails 开发、Node.js 开发
+        </p>
+    </main>
+    <section data-x id="siteSkills" class="skills">
+        <h2>技能</h2>
+        <ol class="clearfix">
+            <li>
+                <h3>
+                    HTML 5 &amp; CSS 3
+                </h3>
+                <div class="progressBar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+            </li>
+            <li>
+                <h3>
+                    JavaScript
+                </h3>
+                <div class="progressBar">
+                    <div class="progress" style="width: 95%;"></div>
+                </div>
+            </li>
+            <li>
+                <h3>
+                    jQuery
+                </h3>
+                <div class="progressBar">
+                    <div class="progress" style="width: 80%;"></div>
+                </div>
+            </li>
+            <li>
+                <h3>
+                    Vue.js
+                </h3>
+                <div class="progressBar">
+                    <div class="progress" style="width: 70%;"></div>
+                </div>
+            </li>
+            <li>
+                <h3>
+                    React.js
+                </h3>
+                <div class="progressBar">
+                    <div class="progress" style="width: 60%;"></div>
+                </div>
+            </li>
+            <li>
+                <h3>
+                    Node.js
+                </h3>
+                <div class="progressBar">
+                    <div class="progress" style="width: 50%;"></div>
+                </div>
+            </li>
+        </ol>
+    </section>
+    <section data-x class="portfolio" id="siteWorks">
+        <h2>作品集</h2>
+        <!--这是 init-swiper 的 view，用户看得见的东西-->
+        <!-- Slider main container -->
+        <div id="mySlides">  <!-- 轮播相册-->
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <img src="./img/nav-page.jpg" class="swiper-slide">
+                    <img src="./img/canvas.jpg" class="swiper-slide">
+                    <img src="./img/apple-style-slides.jpg" class="swiper-slide">
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- If we need navigation buttons -->
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/20.0.0/tween.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.0/dist/av-min.js"></script>
+    <script src="./js/base/controller.js"></script>
+    <script src="./js/base/view.js"></script>
+    <!-- 模块化 -->
+    <script src="./js/auto-slide-up.js"></script> 
+    <script src="./js/init-swiper.js"></script>
+    <script src="./js/loading.js"></script>
+    <script src="./js/smoothly-navigation.js"></script>
+    <script src="./js/sticky-topbar.js"></script>
+
+</body>
+</html>

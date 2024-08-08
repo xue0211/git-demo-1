@@ -4,7 +4,8 @@
   "description": "hello",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d lib"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +14,12 @@
     "leancloud-realtime": "^5.0.0-rc.8",
     "leancloud-realtime-plugin-typed-messages": "^4.0.2",
     "leancloud-storage": "^4.15.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.24.8",
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/preset-react": "^7.24.7",
+    "sass": "^1.77.8"
   }
 }
